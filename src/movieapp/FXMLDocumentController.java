@@ -50,7 +50,7 @@ public class FXMLDocumentController implements Initializable {
     public Movie getMovieFromFile() {
         Movie movie = null;
         try {
-            BufferedReader br = new BufferedReader(new FileReader(new File("TestFile.txt")));
+            BufferedReader br = new BufferedReader(new FileReader(new File("MovieFile.txt")));
             String line;
             String[] array;
             while((line = br.readLine()) != null) {
