@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="movieapp.FXMLDocumentController">
+   <children>
+      <TableView fx:id="tableView" layoutX="46.0" layoutY="74.0" prefHeight="404.0" prefWidth="508.0">
+        <columns>
+          <TableColumn fx:id="movieNameColumn" prefWidth="409.0" text="Movie Name" />
+          <TableColumn fx:id="shelfNumberColumn" minWidth="0.0" prefWidth="98.0" text="Shelf Number" />
+        </columns>
+      </TableView>
+      <TextField fx:id="searchText" layoutX="105.0" layoutY="33.0" />
+      <Label fx:id="searchLabel" layoutX="63.0" layoutY="37.0" text="Search" />
+   </children>
+</AnchorPane>
