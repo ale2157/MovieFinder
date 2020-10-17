@@ -2,10 +2,7 @@ package movieapp;
 
 import javafx.beans.property.SimpleStringProperty;
 
-/**
- *
- * @author Alexandra
- */
+
 public class Movie {
     private SimpleStringProperty movieName;
     private SimpleStringProperty shelfNumber;
