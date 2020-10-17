@@ -18,10 +18,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-/**
- *
- * @author Alexandra
- */
 public class FXMLDocumentController implements Initializable {
     // config table
     @FXML private TableView<Movie> tableView;
@@ -32,8 +28,6 @@ public class FXMLDocumentController implements Initializable {
     @FXML private TextField searchText = new TextField();
     // Observable List to store data
     private final ObservableList<Movie> movieData = FXCollections.observableArrayList();
-    
-    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -49,14 +43,21 @@ public class FXMLDocumentController implements Initializable {
     // This method will get list of movies from file, store in Movie object, and add to our ObservableList
     public Movie getMovieFromFile() {
         Movie movie = null;
+        int countLine = 0;
+        int maxLine = 0;
         try {
             BufferedReader br = new BufferedReader(new FileReader(new File("MovieFile.txt")));
             String line;
             String[] array;
-            while((line = br.readLine()) != null) {
-                array = line.split("#");            
-                movie = new Movie((array[0]), (array[1]));
-                movieData.addAll(movie);
+            while((line = br.readLine()) != null && countLine <= 38) {
+                maxLine += 1;
+                while(countLine <= maxLine - 1) {
+                   countLine+=1;
+                   array = line.split("#");            
+                   movie = new Movie((array[0]), (array[1]));
+                   movieData.addAll(movie);
+                }
+                
             }
             br.close();
         } catch(Exception ex) {
